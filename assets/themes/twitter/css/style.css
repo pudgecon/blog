@@ -1,6 +1,7 @@
 /* Override some defaults */
 html, body {
   background-color: #eee;
+  font-family: 微软雅黑, 'Microsoft Yahei', 宋体;
 }
 .navbar {
   margin-bottom: 0;
