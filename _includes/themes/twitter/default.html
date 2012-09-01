@@ -25,25 +25,33 @@
   </head>
 
   <body>
+    <div class="searchbar box-shadow">
+      <div class="search-btn">SEARCH</div>
+      <div class="search-text"><input type="text" placeHolder="Search..." /></div>
+      <div class="clear"> </div>
+    </div>
 
     <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
-        </div>
+      <div class="logo box-shadow">
+        <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
       </div>
+      <ul>
+        <!--{% assign pages_list = site.pages %}-->
+        <!--{% assign group = 'navigation' %}-->
+        <!--{% include JB/pages_list %}-->
+        <li><a href="/index.html"><h3>首页</h3><p>Home</p></a></li>
+        <li><a href="/categories.html"><h3>分类</h3><p>Categories</p></a></li>
+        <li><a href="/tags.html"><h3>标签</h3><p>Tags</p></a></li>
+        <li><a href="/archive.html"><h3>归档</h3><p>Archive</p></a></li>
+        <li><a href="/contact.html"><h3>联系我</h3><p>Contact</p></a></li>
+      </ul>
+      <div class="clear"></div>
     </div>
 
     <div class="container">
-
-      <div class="content">
+      <!--<div class="content">-->
         {{ content }}
-      </div>
+      <!--</div>-->
 
       <footer>
         <p>&copy; {{ site.author.name }} 2012 
@@ -51,7 +59,6 @@
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>
       </footer>
-
     </div> <!-- /container -->
 
     {% include JB/analytics %}

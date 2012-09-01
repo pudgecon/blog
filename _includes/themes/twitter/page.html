@@ -1,9 +1,35 @@
-<div class="page-header">
-  <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+<!--<div class="page-header">-->
+  <!--<h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+  <!--<div class="span12">-->
+    <!--{{ content }}-->
+  <!--</div>-->
+<!--</div>-->
+<div class="left-panel">
+  {{ content }}
 </div>
 
-<div class="row">
-  <div class="span12">
-    {{ content }}
+<div class="right-panel">
+  <!--<div class="box-shadow border-radius"></div>-->
+  <div class="categories box-shadow border-radius">
+    <div class="header">分类 CATEGORIES</div>
+    <div class="body">
+      <ul>
+        {% for category in site.categories %}
+          <li>
+            <a href="/categories.html#{{ categorytegory | first }}-ref">
+              {{ category | first }}
+            </a>
+            ({{ category | last | size }})
+          {% endfor %}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tags box-shadow border-radius">
+    <div class="header">标签 TAGS</div>
+    <div class="body">{% tag_cloud %}</div>
   </div>
 </div>
+<div class="clear"></div>
